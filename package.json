@@ -1,0 +1,14 @@
+{
+  "name": "project-a-coding-challenge",
+  "version": "1.0.0",
+  "description": "Frontend coding challenge as part of the job application to Project A.",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch sass/main.scss css/style.css"
+  },
+  "author": "Bruno Mazza",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.43.3"
+  }
+}
