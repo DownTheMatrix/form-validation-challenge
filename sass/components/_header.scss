@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.header {
+  background-color: v.$color-black;
+  min-height: 5.9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1.6rem;
+
+  @include m.respond("tablet") {
+    justify-content: center;
+    padding-left: initial;
+  }
+
+  &__title {
+    font-size: v.$font-size-normal;
+    color: v.$color-white;
+
+    @include m.respond("tablet") {
+      font-size: v.$font-size-large;
+    }
+  }
+}

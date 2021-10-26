@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+.form {
+  border: v.$border-default;
+
+  &__group {
+    label {
+      display: block;
+      font-size: v.$font-size-normal;
+    }
+
+    input[type] {
+      border: v.$border-default;
+      padding: 1rem;
+      margin: 1.6rem 0;
+      font-size: v.$font-size-normal;
+      color: v.$color-black;
+    }
+  }
+
+  &__feedback {
+  }
+
+  &__submit {
+    font-size: v.$font-size-normal;
+    padding: 1.4rem 0;
+    min-width: 25.6rem;
+    background-color: v.$color-black;
+    color: v.$color-white;
+    cursor: pointer;
+
+    @include m.respond("tablet") {
+      min-width: 27.6rem;
+    }
+  }
+}

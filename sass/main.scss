@@ -1,5 +1,11 @@
-@use "base";
+@forward "./abstracts/base";
 
-@use "header";
+@forward "./abstracts/variables";
 
-@use "form";
+@forward  "./abstracts/breakpoints";
+
+@forward "./abstracts/mixins";
+
+@forward "./components/header";
+
+@forward "./components/form";
