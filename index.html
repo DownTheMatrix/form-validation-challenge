@@ -4,10 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="http://fonts.cdnfonts.com/css/arial-mt-std" rel="stylesheet" />
     <title>Project A - Frontend Coding Challenge</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    
+      
+    <!-- Header -->
+    <header class="header">
+      <h2 class="header__title">Registration</h2>
+    </header>
+
+    <!-- Form -->
+    <div class="container">
+      <form action="#" class="form">
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="test@test.de"
+            required
+          />
+        </div>
+        <div class="form__group">
+          <label for="email">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="form__feedback"></div>
+        <button class="form__submit" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
