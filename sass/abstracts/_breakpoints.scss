@@ -1,6 +1,6 @@
 /* Website main breakpoints */
 $breakpoints: (
-  'mobile':  320px,
-  'tablet': 768px,
-  'desktop':  1024px
+  'mobile':  20em, // i.e.: 320px / 16px = 20em
+  'tablet': 48em,
+  'desktop':  64em
 ) !default;
