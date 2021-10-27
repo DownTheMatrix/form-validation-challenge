@@ -6,51 +6,69 @@ const uppercase = document.querySelector("#uppercase");
 const number = document.querySelector("#number");
 const specialChar = document.querySelector("#special-char");
 
+/** Add a new class to the feedback list item to display a different marker.
+ * @param {object} [element] - The feedback list item whose marker will change.
+ * @param {string} [className] - The feedback list item class.
+ * @return {object} The feedback list item with an updated class.
+ */
+function addClass(element, className) {
+  return element.classList.add(className);
+}
+
+/** Remove the feedback list item class to display a different marker.
+ * @param {object} [element] - The feedback list item whose marker will change.
+ * @param {string} [className] - The feedback list item class.
+ * @return {object} The feedback list item with an updated class.
+ */
+function removeClass(element, className) {
+  return element.classList.remove(className);
+}
+
 /* Password validation */
 passwordField.addEventListener("keyup", function () {
-    
+
   /* Must contain more than 8 characters */
   if (passwordField.value.length >= 8) {
-    charsLength.classList.remove("invalid");
-    charsLength.classList.add("valid");
+    removeClass(charsLength, "invalid");
+    addClass(charsLength, "valid");
   } else {
-    charsLength.classList.remove("valid");
-    charsLength.classList.add("invalid");
+    removeClass(charsLength, "valid");
+    addClass(charsLength, "invalid");
   }
 
   /* Must contain a lowercase letter */
   if (passwordField.value.match(/[a-z]/g)) {
-    lowercase.classList.remove("invalid");
-    lowercase.classList.add("valid");
+    removeClass(lowercase, "invalid");
+    addClass(lowercase, "valid");
   } else {
-    lowercase.classList.remove("valid");
-    lowercase.classList.add("invalid");
+    removeClass(lowercase, "valid");
+    addClass(lowercase, "invalid");
   }
 
   /* Must contain an uppercase letter */
   if (passwordField.value.match(/[A-Z]/g)) {
-    uppercase.classList.remove("invalid");
-    uppercase.classList.add("valid");
+    removeClass(uppercase, "invalid");
+    addClass(uppercase, "valid");
   } else {
-    uppercase.classList.remove("valid");
-    uppercase.classList.add("invalid");
+    removeClass(uppercase, "valid");
+    addClass(uppercase, "invalid");
   }
 
   /* Must contain a number */
   if (passwordField.value.match(/[0-9]/g)) {
-    number.classList.remove("invalid");
-    number.classList.add("valid");
+    removeClass(number, "invalid");
+    addClass(number, "valid");
   } else {
-    number.classList.remove("valid");
-    number.classList.add("invalid");
+    removeClass(number, "valid");
+    addClass(number, "invalid");
   }
 
   /* Must contain a special character */
   if (passwordField.value.match(/(?=.*[!#$@^%&? "])[!#$@^%&?]/)) {
-    specialChar.classList.remove("invalid");
-    specialChar.classList.add("valid");
+    removeClass(specialChar, "invalid");
+    addClass(specialChar, "valid");
   } else {
-    specialChar.classList.remove("valid");
-    specialChar.classList.add("invalid");
+    removeClass(specialChar, "valid");
+    addClass(specialChar, "invalid");
   }
 });
