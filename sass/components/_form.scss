@@ -3,8 +3,41 @@
 
 .form {
   border: v.$border-default;
+  padding: 3.2rem 1.6rem;
+  width: 100%;
+
+  @include m.respond("tablet") {
+    min-width: 60rem;
+  }
+
+  &__inputs {
+    display: block;
+
+    @include m.respond("tablet") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 
   &__group {
+    @include m.respond("tablet") {
+      &.email-field {
+        order: 2;
+      }
+      &.password-field {
+        order: 1;
+      }
+    }
+
+    @include m.respond("desktop") {
+      &.email-field {
+        order: 1;
+      }
+      &.password-field {
+        order: 2;
+      }
+    }
+
     label {
       display: block;
       font-size: v.$font-size-normal;
@@ -16,22 +49,84 @@
       margin: 1.6rem 0;
       font-size: v.$font-size-normal;
       color: v.$color-black;
+      width: 100%;
+
+      @include m.respond("tablet") {
+        min-width: 27.6rem;
+      }
     }
   }
 
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
   &__feedback {
+    margin-bottom: 3.2rem;
+    grid-column: 1 / -1;
+
+    @include m.respond("tablet") {
+      margin-bottom: 0;
+      grid-column: 1;
+    }
+
+    @include m.respond("desktop") {
+      margin-bottom: 3.2rem;
+      grid-column: 2;
+    }
+
+    ul {
+      list-style-type: none;
+
+      li {
+        font-size: v.$font-size-normal;
+
+        .form-validation-icon {
+          &.invalid {
+            color: v.$color-error;
+
+            &::before {
+              content: "✘";
+              margin-right: 0.4rem;
+            }
+          }
+
+          &.valid {
+            color: v.$color-success;
+
+            &::before {
+              content: "✔︎";
+              margin-right: 0.4rem;
+            }
+          }
+        }
+      }
+    }
   }
 
   &__submit {
     font-size: v.$font-size-normal;
     padding: 1.4rem 0;
-    min-width: 25.6rem;
+    width: 100%;
     background-color: v.$color-black;
     color: v.$color-white;
     cursor: pointer;
+    grid-column: 1 / -1;
 
     @include m.respond("tablet") {
-      min-width: 27.6rem;
+      max-width: 27.6rem;
+      grid-column: 2;
+      align-self: flex-end;
+    }
+
+    @include m.respond("desktop") {
+      grid-column: 2;
+    }
+
+    &:disabled {
+      opacity: .6;
+      cursor: not-allowed;
     }
   }
 }
