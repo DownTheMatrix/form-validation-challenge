@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as m;
+
 *,
 *::before,
 *::after {
@@ -13,10 +15,23 @@ html {
 body {
   line-height: 1.5;
   font-family: "Arial MT", sans-serif;
+  height: 100vh;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 }
 
 .container {
   padding: 1.6rem;
   max-width: 60rem;
   margin: 0 auto;
+  height: 100%;
+
+  @include m.respond("tablet") {
+    display: flex;
+    align-items: center;
+  }
 }
