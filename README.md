@@ -1,6 +1,6 @@
 # Overview
 
-![Screenshot](https://raw.githubusercontent.com/DownTheMatrix/form-validation-challenge/master/screenshot.png?)
+![Screenshot](https://raw.githubusercontent.com/DownTheMatrix/form-validation-challenge/master/screenshot.png?token=AH6QICUJ7EHDEBMETHKPRILBPFPOQ)
 
 This repository contains the files for a Form Validation coding assessment.
 ## How To Run
@@ -22,7 +22,7 @@ No dependencies were harmed during the development process.
 The only non-vanilla tool used is SASS (using the latest `dart-sass` [syntax](https://sass-lang.com/dart-sass)) as a CSS precompiler.
 ### Chrome Lighthouse audit score
 
-![Lighthouse Audit](https://raw.githubusercontent.com/DownTheMatrix/form-validation-challenge/master/lighthouse-audit.png?)
+![Lighthouse Audit](https://raw.githubusercontent.com/DownTheMatrix/form-validation-challenge/master/lighthouse-audit.png?token=AH6QICRDHY45OY2L5S4G4TDBPFPQU)
 
 The page performed well when running the Google Chrome Lightouse audit in incognito mode (so as to avoid any browser extension interference). 
 
