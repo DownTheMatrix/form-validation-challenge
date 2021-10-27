@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="http://fonts.cdnfonts.com/css/arial-mt-std" rel="stylesheet" />
+    <link
+      href="http://fonts.cdnfonts.com/css/arial-mt?styles=48916,48920"
+      rel="stylesheet"
+    />
     <title>Project A - Frontend Coding Challenge</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-      
+
     <!-- Header -->
     <header class="header">
       <h2 class="header__title">Registration</h2>
@@ -18,28 +21,61 @@
     <!-- Form -->
     <div class="container">
       <form action="#" class="form">
-        <div class="form__group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="test@test.de"
-            required
-          />
+        <div class="form__inputs">
+          <div class="form__group email-field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="test@test.de"
+              required
+            />
+          </div>
+          <div class="form__group password-field">
+            <label for="email">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
         </div>
-        <div class="form__group">
-          <label for="email">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            required
-          />
+        <div class="form__body">
+          <div class="form__feedback">
+            <ul>
+              <li>
+                <span
+                  id="chars-length"
+                  class="form-validation-icon invalid"
+                ></span
+                >8+ characters
+              </li>
+              <li>
+                <span id="lowercase" class="form-validation-icon invalid"></span
+                >lowercase letter
+              </li>
+              <li>
+                <span id="uppercase" class="form-validation-icon invalid"></span
+                >uppercase letter
+              </li>
+              <li>
+                <span id="number" class="form-validation-icon invalid"></span
+                >number
+              </li>
+              <li>
+                <span
+                  id="special-char"
+                  class="form-validation-icon invalid"
+                ></span
+                >special character
+              </li>
+            </ul>
+          </div>
+          <button class="form__submit" type="submit" disabled>Submit</button>
         </div>
-        <div class="form__feedback"></div>
-        <button class="form__submit" type="submit">Submit</button>
       </form>
     </div>
 
