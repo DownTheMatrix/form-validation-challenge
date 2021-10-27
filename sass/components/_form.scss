@@ -107,6 +107,7 @@
 
   &__submit {
     font-size: v.$font-size-normal;
+    font-family: inherit;
     padding: 1.4rem 0;
     width: 100%;
     background-color: v.$color-black;
