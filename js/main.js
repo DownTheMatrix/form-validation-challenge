@@ -5,6 +5,8 @@ const lowercase = document.querySelector("#lowercase");
 const uppercase = document.querySelector("#uppercase");
 const number = document.querySelector("#number");
 const specialChar = document.querySelector("#special-char");
+const formSubmitBtn = document.querySelector(".form__submit");
+const form = document.querySelector(".form");
 
 /** Add a new class to the feedback list item to display a different marker.
  * @param {object} [element] - The feedback list item whose marker will change.
@@ -24,9 +26,24 @@ function removeClass(element, className) {
   return element.classList.remove(className);
 }
 
+/** Check if the conditions are met after the user stopped typing, and enable the form submit button.
+ * @return {boolean} Returns true if the password field meets the criteria.
+ */
+function enableSubmitBtn() {
+  const passwordRequirements = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  let timeout = null;
+  clearTimeout(timeout);
+  timeout = setTimeout(function () {
+    if (passwordField.value.match(passwordRequirements)) {
+      formSubmitBtn.disabled = false;
+    } else {
+      formSubmitBtn.disabled = true;
+    }
+  }, 300);
+}
+
 /* Password validation */
 passwordField.addEventListener("keyup", function () {
-
   /* Must contain more than 8 characters */
   if (passwordField.value.length >= 8) {
     removeClass(charsLength, "invalid");
@@ -71,4 +88,6 @@ passwordField.addEventListener("keyup", function () {
     removeClass(specialChar, "valid");
     addClass(specialChar, "invalid");
   }
+  
+  enableSubmitBtn();
 });
